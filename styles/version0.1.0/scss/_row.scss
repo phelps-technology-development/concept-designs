@@ -70,3 +70,53 @@
     clear: both;
   }
 }
+
+@include device("phone") {
+  .row {
+    .columns-2 {
+      .card, .card2, .card3 {
+        width: 91%;
+      }
+      .column, .column2, .column3 {
+        width: 100%;
+      }
+    }
+    .columns-3 {
+      .card, .card2, .card3 {
+        width: 91%;
+      }
+      .column, .column2, .column3 {
+        width: 100%;
+      }
+    }
+    .columns-4 {
+      .card, .card2, .card3 {
+        width: 91%;
+      }
+      .column, .column2, .column3 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include device("tablet") {
+  .row {
+    .columns-2 {
+      .card, .card2, .card3 {
+        width: 91%;
+      }
+      .column, .column2, .column3 {
+        width: 100%;
+      }
+    }
+    .columns-3, .columns-4 {
+      .card, .card2, .card3 {
+        width: 43.25%;
+      }
+      .column, .column2, .column3 {
+        width: 50%;
+      }
+    }
+  }
+}
