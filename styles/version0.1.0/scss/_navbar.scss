@@ -1,0 +1,39 @@
+/* Navbar */
+.navbar {
+  position: relative;
+  .toggle {
+    display: none;
+  }
+  .links {
+    position: relative;
+  }
+  .links-right {
+    float: right;
+    position: relative;
+  }
+  .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+  a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+    border-bottom: 4px solid rgba(map-get($colors, "light"), 0);
+  }
+  .dark {
+    a:hover, .logo:hover {
+      border-bottom: 4px solid rgba(map-get($colors, "light"), 1);
+    }
+  }
+  .light {
+    a:hover, .logo:hover {
+      border-bottom: 4px solid rgba(map-get($colors, "dark"), 1);
+    }
+  }
+}
