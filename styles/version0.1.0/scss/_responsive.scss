@@ -4,6 +4,25 @@
       @content;
     }
   } @else if $device == "tablet" {
+    @media screen and (min-width: 600px) and (max-width: 800px) {
+      @content;
+    }
+  } @else if $device == "desktop" {
+    @media screen and (min-width: 800px) and (max-width: 1000px) {
+      @content;
+    }
+  } @else if $device == "lg-desktop" {
+    @media screen and (min-width: 1000px) and (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+@mixin smallerThan($device) {
+  @if $device == "phone" {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
+  } @else if $device == "tablet" {
     @media screen and (max-width: 800px) {
       @content;
     }
@@ -15,5 +34,41 @@
     @media screen and (max-width: 1200px) {
       @content;
     }
+  }
+}
+@mixin biggerThan($device) {
+  @if $device == "phone" {
+    @media screen and (min-width: 600px) {
+      @content;
+    }
+  } @else if $device == "tablet" {
+    @media screen and (min-width: 800px) {
+      @content;
+    }
+  } @else if $device == "desktop" {
+    @media screen and (min-width: 1000px) {
+      @content;
+    }
+  } @else if $device == "lg-desktop" {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@include smallerThan("tablet") {
+  .desktop-hidden {
+    display: block;
+  }
+  .mobile-hidden {
+    display: none;
+  }
+}
+@include biggerThan("desktop") {
+  .desktop-hidden {
+    display: none;
+  }
+  .mobile-hidden {
+    display: block;
   }
 }

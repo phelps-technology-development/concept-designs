@@ -44,3 +44,13 @@
     visibility: hidden;
   }
 }
+@include smallerThan("tablet") {
+  .navbar {
+    .links {
+      display: none;
+    }
+    .toggle {
+      display: block;
+    }
+  }
+}
