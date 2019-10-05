@@ -1,0 +1,74 @@
+/* Colors */
+@mixin baseColors($name, $color) {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+  .text-#{$name}, .text-#{$name} * {
+    color: $color;
+  }
+  .border-#{$name} {
+    border: 2px solid $color;
+  }
+  .hover-bg-#{$name}:hover {
+    background-color: $color;
+  }
+  .hover-text-#{$name}:hover, .hover-text-#{$name}:hover * {
+    color: $color;
+  }
+  .hover-border-#{$name}:hover {
+    border: 2px solid $color;
+  }
+}
+@mixin colorOpacity($name, $color, $opacity) {
+  .bg-#{$name}-#{$opacity} {
+    background-color: rgba($color, $opacity / 100);
+  }
+  .text-#{$name}-#{$opacity}, .text-#{$name}-#{$opacity} * {
+    color: rgba($color, $opacity / 100);
+  }
+  .hover-bg-#{$name}-#{$opacity}:hover {
+    background-color: rgba($color, $opacity / 100);
+  }
+  .hover-text-#{$name}-#{$opacity}:hover, .hover-text-#{$name}-#{$opacity}:hover * {
+    color: rgba($color, $opacity / 100);
+  }
+  .border-#{$name}-#{$opacity} {
+    border: 2px solid rgba($color, $opacity / 100);
+  }
+  .hover-border-#{$name}-#{$opacity}:hover {
+    border: 2px solid rgba($color, $opacity / 100);
+  }
+  .box-shadow-#{$name}-#{$opacity} {
+    box-shadow: 0px 8px 16px 0px rgba($color, $opacity / 100);
+  }
+  .hover-box-shadow-#{$name}-#{$opacity}:hover {
+    box-shadow: 0px 8px 16px 0px rgba($color, $opacity / 100);
+  }
+  .text-shadow-#{$name}-#{$opacity} {
+    text-shadow: 1px 1px 15px rgba($color, $opacity / 100);
+  }
+  .hover-text-shadow-#{$name}-#{$opacity}:hover {
+    text-shadow: 1px 1px 15px rgba($color, $opacity / 100);
+  }
+}
+
+$colors: (
+  dark: #2d2d2d,
+  light: #f5f5f5,
+  red: #cf3939,
+  orange: #e87307,
+  yellow: #dfd708,
+  green: #15ac24,
+  blue: #1692da,
+  purple: #7e13de,
+  brown: #372c2c
+);
+
+$onetohundred: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55, 56, 57, 58, 59, 61, 62, 63, 64, 65, 66, 67, 68, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 81, 82, 83, 84, 85, 86, 87, 88, 89, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100;
+
+@each $name, $color in $colors {
+  @include baseColors($name, $color);
+  @each $opacity in $onetohundred {
+    @include colorOpacity($name, $color, $opacity);
+  }
+}
