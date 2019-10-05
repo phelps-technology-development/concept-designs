@@ -38187,5 +38187,36 @@
     width: 50%;
   }
 }
+.heroImage {
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heroText-Right, .heroText-Left, .heroText-Center {
+  position: absolute;
+}
+
+.heroText-Right {
+  top: 50%;
+  right: 5%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.heroText-Left {
+  top: 50%;
+  left: 5%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.heroText-Center {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 
 /*# sourceMappingURL=main.css.map */
