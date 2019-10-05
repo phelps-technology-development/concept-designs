@@ -1,0 +1,52 @@
+.card, .card2, .card3 {
+  float: left;
+  margin-left: 4.5%;
+  padding: 0px;
+  margin-top: 15px;
+  background-size: cover;
+  border-radius: 7px;
+}
+
+.column, .column2, .column3 {
+  float: left;
+  margin-left: 4.5%;
+  margin-top: 15px;
+  background-size: cover;
+}
+
+.row {
+  .columns-1 {
+    .card, .card2, .card3, .column, .column2, .column3 {
+      width: 91%;
+    }
+  }
+  .columns-2 {
+    .card, .card2, .card3, .column, .column2, .column3 {
+      width: 43.25%;
+    }
+  }
+  .columns-3 {
+    .card, .column {
+      width: 27.33%;
+    }
+    .card2, .card3, .column2, .column3 {
+      width: 59.16%;
+    }
+  }
+  .columns-4 {
+    .card, .column {
+      width: 19.375%;
+    }
+    .card2, .column2 {
+      width: 43.25%;
+    }
+    .card3, .column3 {
+      width: 67.125%;
+    }
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
