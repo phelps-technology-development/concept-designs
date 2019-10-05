@@ -38431,4 +38431,10 @@
           transform: translate(-50%, -50%);
 }
 
+form input {
+  padding: 14px 16px;
+  font-size: 12px;
+  width: 100%;
+}
+
 /*# sourceMappingURL=main.css.map */
