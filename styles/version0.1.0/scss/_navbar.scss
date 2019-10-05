@@ -36,4 +36,11 @@
       border-bottom: 4px solid rgba(map-get($colors, "dark"), 1);
     }
   }
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 }
