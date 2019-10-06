@@ -2,6 +2,12 @@ html, body {
   margin: 0;
   padding: 0;
 }
+.btn {
+  padding: 14px 16px;
+  border: 2px solid transparent;
+  outline: none;
+  text-decoration: none;
+}
 @import 'responsive';
 @import 'colors';
 @import 'navbar';
