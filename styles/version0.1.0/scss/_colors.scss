@@ -1,9 +1,9 @@
 /* Colors */
 @mixin baseColors($name, $color) {
-  .bg-#{$name} {
+  .bg-#{$name}, input[type="date"].bg-#{$name} {
     background-color: $color;
   }
-  .text-#{$name}, .text-#{$name} * {
+  .text-#{$name}, .text-#{$name} {
     color: $color;
   }
   .border-#{$name} {
@@ -12,7 +12,7 @@
   .hover-bg-#{$name}:hover {
     background-color: $color;
   }
-  .hover-text-#{$name}:hover, .hover-text-#{$name}:hover * {
+  .hover-text-#{$name}:hover, .hover-text-#{$name}:hover {
     color: $color;
   }
   .hover-border-#{$name}:hover {
@@ -23,13 +23,13 @@
   .bg-#{$name}-#{$opacity} {
     background-color: rgba($color, $opacity / 100);
   }
-  .text-#{$name}-#{$opacity}, .text-#{$name}-#{$opacity} * {
+  .text-#{$name}-#{$opacity}, .text-#{$name}-#{$opacity} {
     color: rgba($color, $opacity / 100);
   }
   .hover-bg-#{$name}-#{$opacity}:hover {
     background-color: rgba($color, $opacity / 100);
   }
-  .hover-text-#{$name}-#{$opacity}:hover, .hover-text-#{$name}-#{$opacity}:hover * {
+  .hover-text-#{$name}-#{$opacity}:hover, .hover-text-#{$name}-#{$opacity}:hover {
     color: rgba($color, $opacity / 100);
   }
   .border-#{$name}-#{$opacity} {

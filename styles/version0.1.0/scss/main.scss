@@ -1,6 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
 @import 'responsive';
 @import 'colors';
 @import 'navbar';
 @import 'row';
 @import 'hero';
 @import 'forms';
+@import 'fonts';
