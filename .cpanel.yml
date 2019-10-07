@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/goleuwupz58z/public_html/v2/assets/plugin/
+    - /bin/cp -R styles $DEPLOYPATH
