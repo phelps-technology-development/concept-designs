@@ -1,6 +1,6 @@
 /* Colors */
 @mixin baseColors($name, $color) {
-  .bg-#{$name}, input[type="date"].bg-#{$name} {
+  .bg-#{$name} {
     background-color: $color;
   }
   .text-#{$name}, .text-#{$name} {
