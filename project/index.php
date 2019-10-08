@@ -5,7 +5,7 @@ session_start();
 <head>
   <title>Opus</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../concept-designs/styles/version0.1.0/scss/main.css">
+  <link rel="stylesheet" href="https://www.phelpstechdev.com/v2/assets/plugin/styles/version0.1.0/scss/main.css">
 </head>
 <body class="font-trebuchet bg-light text-dark">
   <div class="heroImage heroImage-full" style="background-image: url('assets/images/desk.jpg');">
