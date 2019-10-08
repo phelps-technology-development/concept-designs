@@ -24,10 +24,7 @@ include_once("../../assets/database.php");
           <input type="submit" name="login" class="btn bg-light text-dark">
         </form>
       </div>
-      <div class="column mobile-hidden heroImage" style="background-image: url('assets/images/desk.jpg');">
-        <div class="heroText-Center bg-dark text-light">
-          <h1>Create a Team</h1>
-        </div>
+      <div class="column mobile-hidden height-100" style="background-image: url('assets/images/desk.jpg');">
       </div>
     </div>
   </div>
