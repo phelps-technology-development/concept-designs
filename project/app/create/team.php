@@ -24,7 +24,7 @@ include_once("../../assets/database.php");
           <input type="submit" name="login" class="btn bg-light text-dark">
         </form>
       </div>
-      <div class="column mobile-hidden height-100" style="background-image: url('assets/images/desk.jpg');">
+      <div class="column mobile-hidden height-100" style="background-image: url('../../assets/images/desk.jpg');">
       </div>
     </div>
   </div>
