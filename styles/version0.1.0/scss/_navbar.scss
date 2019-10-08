@@ -26,13 +26,18 @@
     cursor: pointer;
     border-bottom: 4px solid rgba(map-get($colors, "light"), 0);
   }
+  a.logo {
+    font-size: 19;
+    padding: 12px 14px;
+    font-weight: bold;
+  }
   .dark {
-    a:hover, .logo:hover {
+    a:hover, a.logo:hover {
       border-bottom: 4px solid rgba(map-get($colors, "light"), 1);
     }
   }
   .light {
-    a:hover, .logo:hover {
+    a:hover, a.logo a:hover {
       border-bottom: 4px solid rgba(map-get($colors, "dark"), 1);
     }
   }

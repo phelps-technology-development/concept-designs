@@ -3,7 +3,7 @@
   .bg-#{$name} {
     background-color: $color;
   }
-  .text-#{$name}, .text-#{$name} {
+  .text-#{$name}, .text-#{$name}, .navbar.text-#{$name} a {
     color: $color;
   }
   .border-#{$name} {
