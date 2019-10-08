@@ -14,7 +14,7 @@ if (isset($_SESSION['user_id'])) {
 <html>
 <head>
   <title>Opus Dashboard</title>
-  <link rel="stylesheet" href="../../concept-designs/styles/version0.1.0/scss/main.css">
+  <link rel="stylesheet" href="https://www.phelpstechdev.com/v2/assets/plugin/styles/version0.1.0/scss/main.css">
 </head>
 <body class="font-trebuchet bg-dark text-light">
   <div class="heroImage heroImage-full height-100" style="background-image: url('../assets/images/coast.jpg');">
