@@ -3,5 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/goleuwupz58z/public_html/v2/assets/plugin/
     - /bin/cp -R styles $DEPLOYPATH
-    - export DEPLOYPATH=/home/goleuwupz58z/public_html/subdomain/project/
-    - /bin/cp -R project $DEPLOYPATH
+    - export DEPLOYPATHY=/home/goleuwupz58z/public_html/subdomain/project/
+    - /bin/cp -R project $DEPLOYPATHY
