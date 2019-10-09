@@ -5,7 +5,7 @@ class Database {
   public function createTeam($name, $password, $cpassword, $members, $type, $parent) {
     global $pdo;
     
-    if (empty($name) || empty($members) || empty($type) || empty($parent)) {
+    if (empty($name) || empty($members)) {
       $response = "All fields must be filled.";
     } else if ($password != $cpassword) {
       $response = "Passwords must match. ";
