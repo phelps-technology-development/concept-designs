@@ -31,7 +31,7 @@ if (isset($_SESSION['user_id'])) {
           <input type="password" name="password" placeholder="Team Password..." class="bg-light text-dark"><br><br>
           <b>Confirm Password (leave blank for no password)</b><br><br>
           <input type="password" name="cpassword" placeholder="Confirm Team Password..." class="bg-light text-dark"><br><br>
-          <b>Add Friends to Team</b><br><br>
+          <b>Add Friends to Team (make sure to check yourself)</b><br><br>
           <?php
             foreach ($friends as $friend) {
               $data = $database->getUser($friend);
