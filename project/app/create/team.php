@@ -1,6 +1,6 @@
 <?php
-include_once("../../assets/connect.php");
-include_once("../../assets/database.php");
+include_once("../../assets/server/connect.php");
+include_once("../../assets/server/database.php");
 $database = new Database;
 if (isset($_SESSION['user_id'])) {
   $user = $database->getUser($_SESSION['user_id']);
