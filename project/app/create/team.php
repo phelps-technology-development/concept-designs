@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../../assets/server/connect.php");
 include_once("../../assets/server/database.php");
 $database = new Database;
