@@ -17,7 +17,11 @@ class Database {
       $query->bindValue(4, $type);
       $query->bindValue(5, $parent);
       $query->execute();
+      
+      $response = "Team created successfully!";
     }
+    
+    return $response;
   }
 
   public function getUser($id) {
