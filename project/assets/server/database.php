@@ -1,6 +1,24 @@
 <?php
 
 class Database {
+  
+  public function createTeam($name, $password, $cpassword, $members, $type, $parent) {
+    global $pdo;
+    
+    if (empty($name) || empty($members) || empty($type) || empty($parent)) {
+      $response = "All fields must be filled.";
+    } else if ($password != $cpassword) {
+      $response = "Passwords must match. ";
+    } else {
+      $query = $pdo->prepare("INSERT INTO teams (name, password, members, type, parent) VALUES (?, ?, ?, ?, ?)");
+      $query->bindValue(1, $name);
+      $query->bindValue(2, $password);
+      $query->bindValue(3, $members);
+      $query->bindValue(4, $type);
+      $query->bindValue(5, $parent);
+      $query->execute();
+    }
+  }
 
   public function getUser($id) {
 
