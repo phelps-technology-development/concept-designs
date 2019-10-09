@@ -1,7 +1,13 @@
 <?php
 include_once("../../assets/connect.php");
 include_once("../../assets/database.php");
-
+$database = new Database;
+if (isset($_SESSION['user_id'])) {
+  $user = $database->getUser($_SESSION['user_id']);
+  
+  if (isset($_POST['createTeam'])) {
+   $message = $database->createTeam($_POST['name'], $_POST['password'], $_POST['cpassword'], implode(", ", $_POST['members[]')); 
+  }
 
 ?>
 <html>
@@ -21,7 +27,11 @@ include_once("../../assets/database.php");
           <input type="text" name="name" placeholder="Name of Team..." class="bg-light text-dark"><br><br>
           <b>Password (leave blank for no password)</b><br><br>
           <input type="password" name="password" placeholder="Team Password..." class="bg-light text-dark"><br><br>
-          <input type="submit" name="login" class="btn bg-light text-dark">
+          <b>Confirm Password (leave blank for no password)</b><br><br>
+          <input type="password" name="cpassword" placeholder="Confirm Team Password..." class="bg-light text-dark"><br><br>
+          <b>Add Friends to Team</b><br><br>
+          <input type="checkbox" name="members[]" value="1"> William Phelps <br>
+          <input type="submit" name="createTeam" class="btn bg-light text-dark">
         </form>
       </div>
       <div class="column mobile-hidden height-100" style="background-image: url('../../assets/images/desk.jpg');">
@@ -30,3 +40,11 @@ include_once("../../assets/database.php");
   </div>
 </body>
 </html>
+
+<?php
+  
+} else {
+  header("Location: ../../login.php");
+  exit();
+}  
+?>
