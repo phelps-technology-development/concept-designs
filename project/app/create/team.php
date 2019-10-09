@@ -36,7 +36,9 @@ if (isset($_SESSION['user_id'])) {
             foreach ($friends as $friend) {
               $data = $database->getUser($friend);
               ?>
+              <label>
               <input type="checkbox" name="members[]" value="<?php echo $friend; ?>"> <?php echo $data['fname'] . " " . $data['lname']; ?> <br><br>
+              </label>
           <?php
             }
           ?>
