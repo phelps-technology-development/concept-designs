@@ -7,7 +7,7 @@ if (isset($_SESSION['user_id'])) {
   $friends = explode(", ", $_SESSION['friends']);
   
   if (isset($_POST['createTeam'])) {
-   $message = $database->createTeam($_POST['name'], $_POST['password'], $_POST['cpassword'], implode(", ", $_POST['members[]'), "team", 0); 
+   $message = $database->createTeam($_POST['name'], $_POST['password'], $_POST['cpassword'], implode(", ", $_POST['members[]']), "team", 0); 
   }
 
 ?>
