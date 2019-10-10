@@ -35,13 +35,14 @@ if (isset($_SESSION['user_id'])) {
           <div class="row">
             <div class="columns-4">
               <div class="column3">
-                <input type="text" id="userNameAuto" placeholder="Type Username of Friend Here...">
+                <input type="text" id="userNameAuto" placeholder="Type Username of Friend Here..." oninput="autoDetectUser()">
               </div>
               <div class="column">
                 <button class="btn bg-light text-dark container-14 font-size-15" id="userButton" onclick="AddUser">Add User</button>
               </div>
             </div>
           </div>
+          <br>
           <input type="submit" name="createTeam" class="btn bg-light text-dark">
         </form>
       </div>
