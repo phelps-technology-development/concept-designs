@@ -60,7 +60,7 @@ if (isset($_SESSION['user_id'])) {
       
       xml.onreadystatechange = function() {
        if (this.readyState = 4 && this.status == 200) {
-         btn.innerText = xml.responseText;
+         btn.innerHTML = xml.responseText;
          if (xml.responseText == "User Does Not Exist") {
           btn.disabled = true; 
          }
