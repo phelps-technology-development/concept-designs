@@ -31,15 +31,17 @@ if (isset($_SESSION['user_id'])) {
           <input type="password" name="password" placeholder="Team Password..." class="bg-light text-dark"><br><br>
           <b>Confirm Password (leave blank for no password)</b><br><br>
           <input type="password" name="cpassword" placeholder="Confirm Team Password..." class="bg-light text-dark"><br><br>
-          <b>Add Friends to Team (make sure to check yourself)</b><br><br>
-          <?php
-            foreach ($friends as $friend) {
-              $data = $database->getUser($friend);
-              ?>
-              <input type="checkbox" name="members[]" value="<?php echo $friend; ?>" id="<?php echo $friend; ?>"><label for="<?php echo $friend; ?>"><?php echo $data['fname'] . " " . $data['lname']; ?> <br><br></label>
-          <?php
-            }
-          ?>
+          <b>Add Friends to Team</b><br><br>
+          <div class="row">
+            <div class="columns-4">
+              <div class="column3">
+                <input type="text" id="userNameAuto" placeholder="Type Username of Friend Here...">
+              </div>
+              <div class="column">
+                <button class="btn bg-light text-dark container-14 font-size-15" id="userButton" onclick="AddUser">Add User</button>
+              </div>
+            </div>
+          </div>
           <input type="submit" name="createTeam" class="btn bg-light text-dark">
         </form>
       </div>
@@ -47,6 +49,28 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </div>
   </div>
+  <script>
+    function autoDetectUser() {
+      
+      var input = document.getElementById("userNameAuto").value;
+      var btn = document.getElementById("userButton");
+      
+      var xml = new XMLHttpRequest();
+      
+      xml.onreadystatechange = function() {
+       if (this.readyState = 4 && this.status == 200) {
+         btn.innerText = xml.responseText;
+         if (xml.responseText == "User Does Not Exist") {
+          btn.disabled = true; 
+         }
+       }
+      }
+      
+      xml.open("GET", "../../assets/server/ajaxHandler.php?getUserbyUserName=" + input, true);
+      xml.send();
+      
+    }
+  </script>
 </body>
 </html>
 
