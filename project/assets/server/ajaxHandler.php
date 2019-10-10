@@ -13,9 +13,13 @@ if (isset($_SESSION['user_id'])) {
     $num = $query->rowCount();
     
     if ($num == 1) {
-      echo "Add User";
+      ?>
+      <p>Add User</p>
+      <?php
     } else {
-      echo "User Does Not Exist";
+      ?>
+      <p>User Does Not Exist</p>
+      <?php
     }
   }
 
