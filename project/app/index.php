@@ -24,7 +24,7 @@ if (isset($_SESSION['user_id'])) {
         <div class="card bg-light box-shadow-dark-60">
           <div class="container-30">
             <h1>Welcome, <?php echo $user['fname'] . " " . $user['lname']; ?>!</h1>
-            <a href="create/team.php"><button class="btn bg-green text-light container-15 font-size-15"><i class="material-icons">person_add</i> Create a Team</button></a> <a href="create/project.php"><button class="btn bg-green text-light container-15 font-size-15">Create a Project</button></a> <a href="create/task.php"><button class="btn bg-green text-light container-15 font-size-15">Create a Task</button></a>
+            <a href="create/team.php"><button class="btn bg-green text-light container-15 font-size-15">Create a Team</button></a> <a href="create/project.php"><button class="btn bg-green text-light container-15 font-size-15">Create a Project</button></a> <a href="create/task.php"><button class="btn bg-green text-light container-15 font-size-15">Create a Task</button></a>
           </div>
         </div>
         <div class="card bg-light box-shadow-dark-60">
