@@ -38,7 +38,7 @@ if (isset($_SESSION['user_id'])) {
                 <input type="text" id="userNameAuto" placeholder="Type Username of Friend Here..." oninput="autoDetectUser()">
               </div>
               <div class="column">
-                <button type="button" class="btn bg-light text-dark container-4 font-size-10" id="userButton" onclick="AddUser">Add User</button>
+                <button type="button" class="btn bg-green text-dark container-4 font-size-10" id="userButton" onclick="AddUser">Add User</button>
               </div>
             </div>
           </div>
@@ -61,7 +61,6 @@ if (isset($_SESSION['user_id'])) {
       xmlt.onreadystatechange = function() {
        if (this.readyState == 4 && this.status == 200) {
          btn.innerHTML = xmlt.responseText;
-         btn.classList.replace("bg-light", "bg-green");
          btn.classList.replace("bg-red", "bg-green");
          if (xmlt.responseText == "No Such User") {
           btn.disabled = true; 
