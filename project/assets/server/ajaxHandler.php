@@ -5,9 +5,9 @@ include_once("database.php");
 
 if (isset($_SESSION['user_id'])) {
 
-  if (isset($_GET['getUserByUserName'])) {
+  if (isset($_GET['getUserbyUserName'])) {
     $query = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    $query->bindValue(1, $_GET['getUserByUserName']);
+    $query->bindValue(1, $_GET['getUserbyUserName']);
     $query->execute();
     
     $num = $query->rowCount();
@@ -21,7 +21,11 @@ if (isset($_SESSION['user_id'])) {
       <p>User Does Not Exist</p>
       <?php
     }
+  } else {
+      echo "failed request";
   }
 
+} else {
+    echo "USER NOT LOGGED IN";
 }
 ?>
