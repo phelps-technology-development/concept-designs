@@ -59,7 +59,7 @@ if (isset($_SESSION['user_id'])) {
       var xml = new XMLHttpRequest();
       
       xml.onreadystatechange = function() {
-       if (this.readyState = 4 && this.status == 200) {
+       if (this.readyState == 4 && this.status == 200) {
          btn.innerHTML = xml.responseText;
          if (xml.responseText == "User Does Not Exist") {
           btn.disabled = true; 
