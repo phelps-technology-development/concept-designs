@@ -62,7 +62,7 @@ if (isset($_SESSION['user_id'])) {
        if (this.readyState == 4 && this.status == 200) {
          btn.innerHTML = xmlt.responseText;
          btn.classList.replace("bg-red", "bg-green");
-         if (xmlt.responseText == "<p>No Such User</p>") {
+         if (xmlt.responseText == "No Such User") {
           btn.disabled = true; 
           btn.classList.replace("bg-green", "bg-red");
          }
