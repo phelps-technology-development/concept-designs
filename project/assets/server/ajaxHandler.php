@@ -18,7 +18,7 @@ if (isset($_SESSION['user_id'])) {
       <?php
     } else {
       ?>
-      <p>User Does Not Exist</p>
+      <p>No Such User</p>
       <?php
     }
   } else {
