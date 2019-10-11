@@ -61,8 +61,14 @@ if (isset($_SESSION['user_id'])) {
       xmlt.onreadystatechange = function() {
        if (this.readyState == 4 && this.status == 200) {
          btn.innerHTML = xmlt.responseText;
+         btn.classList.remove("bg-red");
+         btn.classList.remove("bg-light");
+         btn.classList.add("bg-green");
          if (xmlt.responseText == "No Such User") {
           btn.disabled = true; 
+          btn.classList.remove("bg-light");
+          btn.classList.remove("bg-green");
+          btn.classList.add("bg-red");
          }
        }
       }
