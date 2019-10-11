@@ -14,11 +14,11 @@ if (isset($_SESSION['user_id'])) {
     
     if ($num == 1) {
       ?>
-      <p>Add User</p>
+      Add User
       <?php
     } else {
       ?>
-      <p>No Such User</p>
+      No Such User
       <?php
     }
   } else {
