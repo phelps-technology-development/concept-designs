@@ -33,12 +33,12 @@ if (isset($_SESSION['user_id'])) {
           <input type="password" name="cpassword" placeholder="Confirm Team Password..." class="bg-light text-dark"><br><br>
           <b>Add Friends to Team</b><br><br>
           <div class="row">
-            <div class="columns-4">
-              <div class="column3">
+            <div class="columns-3">
+              <div class="column2">
                 <input type="text" id="userNameAuto" placeholder="Type Username of Friend Here..." oninput="autoDetectUser()">
               </div>
               <div class="column">
-                <button class="btn bg-light text-dark container-14 font-size-15" id="userButton" onclick="AddUser">Add User</button>
+                <button type="button" class="btn bg-light text-dark container-4 font-size-10" id="userButton" onclick="AddUser">Add User</button>
               </div>
             </div>
           </div>
@@ -56,19 +56,19 @@ if (isset($_SESSION['user_id'])) {
       var input = document.getElementById("userNameAuto").value;
       var btn = document.getElementById("userButton");
       
-      var xml = new XMLHttpRequest();
+      var xmlt = new XMLHttpRequest();
       
-      xml.onreadystatechange = function() {
+      xmlt.onreadystatechange = function() {
        if (this.readyState == 4 && this.status == 200) {
-         btn.innerHTML = xml.responseText;
-         if (xml.responseText == "User Does Not Exist") {
+         btn.innerHTML = xmlt.responseText;
+         if (xmlt.responseText == "No Such User") {
           btn.disabled = true; 
          }
        }
       }
       
-      xml.open("GET", "../../assets/server/ajaxHandler.php?getUserbyUserName=" + input, true);
-      xml.send();
+      xmlt.open("GET", "../../assets/server/ajaxHandler.php?getUserbyUserName=" + input, true);
+      xmlt.send();
       
     }
   </script>
