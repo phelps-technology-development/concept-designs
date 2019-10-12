@@ -9,9 +9,9 @@ if (isset($_SESSION['user_id'])) {
     $query = $pdo->prepare("SELECT * FROM users WHERE username = ?");
     $query->bindValue(1, $_GET['getUserbyUserName']);
     $query->execute();
-    
+
     $num = $query->rowCount();
-    
+
     if ($num == 1) {
       ?>
       Add User
@@ -21,8 +21,27 @@ if (isset($_SESSION['user_id'])) {
       No Such User
       <?php
     }
-  } else {
-      echo "failed request";
+  }
+  if (isset($_GET['getUserbyUserNameINPUT'])) {
+    $query = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+    $query->bindValue(1, $_GET['getUserbyUserNameINPUT']);
+    $query->execute();
+
+    $num = $query->rowCount();
+
+    if ($num == 1) {
+
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+
+      ?>
+      <input type="hidden" name="members[]" value="<?php echo $result['id']; ?>">
+      <input type="text" value="<?php echo $result['fname'] . ' ' . $result['lname']; ?>" class="container-5 font-size-10" disabled readonly>
+      <?php
+    } else {
+      ?>
+      No Such User
+      <?php
+    }
   }
 
 } else {
