@@ -8,7 +8,18 @@ if (isset($_SESSION['user_id'])) {
   $friends = explode(", ", $user['friends']);
 
   if (isset($_POST['createTeam'])) {
-   $message = $database->createTeam($_POST['name'], md5($_POST['password']), md5($_POST['cpassword']), implode(", ", $_POST['members']), "team", "0");
+
+    if (empty($_POST['members'])) {
+      $members = array($user['id']);
+    } else {
+      $members = $_POST['members'];
+      $isIn = in_array($user['id'], $members);
+      if (!$isIn) {
+        array_push($members, $user['id']);
+      }
+    }
+
+   $message = $database->createTeam($_POST['name'], md5($_POST['password']), md5($_POST['cpassword']), implode(", ", $members), "user", $user['id']);
   }
 
 ?>
@@ -38,7 +49,7 @@ if (isset($_SESSION['user_id'])) {
                 <input type="text" id="userNameAuto" placeholder="Type Username of Friend Here..." oninput="autoDetectUser()" autocomplete="off">
               </div>
               <div class="column">
-                <button type="button" class="btn bg-green text-dark container-11 font-size-16" id="userButton" onclick="addUser()">Add User</button>
+                <button type="button" class="btn bg-green text-light container-11 font-size-16" style="width: 100%;" id="userButton" onclick="addUser()">Add User</button>
               </div>
             </div>
           </div>

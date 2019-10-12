@@ -8,6 +8,7 @@ $database = new Database;
 if (isset($_SESSION['user_id'])) {
 
   $user = $database->getUser($_SESSION['user_id']);
+  $teams = $database->getTeams("user", $user['id']);
 
   ?>
 
@@ -16,6 +17,7 @@ if (isset($_SESSION['user_id'])) {
   <title>Opus Dashboard</title>
   <link rel="stylesheet" href="https://www.phelpstechdev.com/v2/assets/plugin/styles/version0.1.0/scss/main.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="font-trebuchet bg-dark text-light">
   <div class="heroImage heroImage-full height-100" style="background-image: url('../assets/images/coast.jpg');">

@@ -35,7 +35,7 @@ if (isset($_SESSION['user_id'])) {
 
       ?>
       <input type="hidden" name="members[]" value="<?php echo $result['id']; ?>">
-      <input type="text" value="<?php echo $result['fname'] . ' ' . $result['lname']; ?>" class="container-5 font-size-10" disabled readonly>
+      <input type="text" value="<?php echo $result['fname'] . ' ' . $result['lname']; ?>" class="container-5 font-size-10" disabled>
       <?php
     } else {
       ?>

@@ -1,11 +1,24 @@
 <?php
 
 class Database {
-  
+
+  public function getTeams($type, $parent) {
+
+    global $pdo;
+
+    $query = $pdo->prepare("SELECT * FROM teams WHERE type = ? AND parent = ?");
+    $query->bindValue(1, $type);
+    $query->bindValue(2, $parent);
+    $query->execute();
+
+    return $query->fetchAll();
+
+  }
+
   public function createTeam($name, $password, $cpassword, $members, $type, $parent) {
     global $pdo;
-    
-    if (empty($name) || empty($members)) {
+
+    if (empty($name)) {
       $response = "All fields must be filled.";
     } else if ($password != $cpassword) {
       $response = "Passwords must match. ";
@@ -17,10 +30,10 @@ class Database {
       $query->bindValue(4, $type);
       $query->bindValue(5, $parent);
       $query->execute();
-      
+
       $response = "Team created successfully!";
     }
-    
+
     return $response;
   }
 
