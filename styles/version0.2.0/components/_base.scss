@@ -1,0 +1,32 @@
+@for $size from 1 through 100 {
+  .container-#{$size} {
+    padding: #{$size}px #{$size}px;
+  }
+}
+
+.padded-row {
+  $paddings: 30, 45, 50;
+  @each $padding in $paddings {
+    @for $columns from 1 through 5 {
+      .columns-#{$columns}-#{$padding} {
+        .column {
+          float: left;
+          margin-left: percentage($padding/1000);
+          width: (100% - (($padding/10)*($columns+1)))/$columns;
+        }
+        @for $number from 1 through $columns {
+          .column#{$number} {
+            float: left;
+            margin-left: percentage($padding/1000);
+            width: $number * ((100% - (($padding/10)*($columns+1)))/$columns) + ($padding/10*($number - 1));
+          }
+        }
+      }
+    }
+  }
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
